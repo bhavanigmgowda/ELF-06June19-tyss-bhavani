@@ -1,0 +1,220 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl240\slmult1\qc\ul\b\f0\fs32\lang9 Java Code Conventions\fs22\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj\ulnone\b0 The first non-comment line of most Java source files is a package statement. After that, import statements can follow For example \tab\par
+
+\pard\sl240\slmult1\qj\tab  \tab\tab\tab package java.awt;\par
+\tab\tab\tab\tab import java.awt.peer.CanvasPeer;\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj class variable declaration shoud be  First public, then protected, and then private.\par
+{\pntext\f2\'B7\tab} Instance variables declaration shoud be   First public, then protected, and then private.\par
+{\pntext\f2\'B7\tab}Methods These methods should be grouped by functionality rather than by scope or accessibility.\par
+
+\pard\sa200\sl240\slmult1\qj\tab  For example, a private class method can be in between two public instance ethods.     \tab The goal is to make reading and understanding the code easier.\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj Tabs must be set exactly every 8 spaces (not 4)\par
+{\pntext\f2\'B7\tab}Avoid lines longer than 80 characters.\par
+
+\pard\sa200\sl240\slmult1\qj  \ul\b Wrapping Lines\ulnone\b0\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj When an expression will not fit on a single line, break it according to these general principles:\par
+
+\pard\sa200\sl240\slmult1\qj\lang1033\tab\tab\f1\lang9\bullet  Break after a comma.\par
+\f0\lang1033\tab\tab\f1\lang9\bullet  Break before an operator.\par
+\f0\lang1033\tab\tab\f1\lang9\bullet  Prefer higher-level breaks to lower-level breaks.\par
+\f0\lang1033\tab\tab\f1\lang9\bullet  Align the new line with the beginning of the expression at the same level \f0\lang1033\tab\tab     \f1\lang9 on the previous\f0\lang1033  \f1\lang9 line.\par
+\f0\lang1033\tab\tab\f1\lang9\bullet  If the above rules lead to confusing code or to code that\rquote s squished up \f0\lang1033\tab\tab    \f1\lang9 against the right\f0\lang1033  ,\f1\lang9 margin, just indent 8 spaces instead.\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\f0 Line wrapping for if statements should generally use the 8-space rule, since conventional (4 space) indentation makes seeing the body difficult\par
+
+\pard\sa200\sl240\slmult1\qj\ul\b Comments\ulnone\b0\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj Java programs can have two kinds of comments\par
+
+\pard\sa200\sl240\slmult1\qj\tab\tab 1. Implementation comments (/*...*/, and //)\par
+\tab\tab 2.Documentation comments(/**...*/)\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj Implementation Comment Formats are block , single-line, trailing and end-of-line\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj Block comments are used to provide descriptions of files, methods, data structures and algorithms\tab  ex: /*\par
+
+\pard\sl240\slmult1\qj\tab\tab\tab  * Here is a block comment.\par
+\tab\tab\tab */\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj  Single-Line Comments  are Short comments can appear on a single line indented to the level of the code that follows ex: /* Handle the condition. */\par
+{\pntext\f2\'B7\tab}Trailing Comments are Very short comments can appear on the same line as the code they describe, but should be shifted far enough to separate them from the statements.\par
+{\pntext\f2\'B7\tab}End-Of-Line Comments The // comment delimiter begins a comment that continues to the newline. It can comment out a complete line or only a partial line.\par
+{\pntext\f2\'B7\tab} Documentation Comments describe Java classes, interfaces, constructors, methods, and fields. Each doc comment is set inside the comment delimiters /**...*/, with one comment per API.\par
+{\pntext\f2\'B7\tab}one declaration per line is recommended since it encourages commenting \par
+{\pntext\f2\'B7\tab}should not  declared variables and functions,  different types ,on the same line\par
+
+\pard\sa200\sl240\slmult1\qj\ul\b Placement\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\ulnone\b0 Put declarations only at the beginning of blocks. (A block is any code surrounded by curly braces \ldblquote\{\rdblquote  and \ldblquote\}\rdblquote .) Don\rquote t wait to declare variables until their first use; it can confuse the unwary programmer and hamper code portability within the scope.\par
+
+\pard\li2880\sl240\slmult1\qj void MyMethod() \{\par
+ \tab int int1; \tab // beginning of method block\par
+ \tab if (condition) \{\par
+ \tab int int2;\tab  \tab // beginning of "if" block\par
+\tab  ...\par
+\tab  \}\par
+\}\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj Try to initialize local variables where they\rquote re declared. The only reason not to initialize a variable where it\rquote s declared is if the initial value depends on some computation occurring first.\par
+
+\pard\sa200\sl240\slmult1\qj\ul\b Class and Interface Declarations\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\ulnone\b0 When coding Java classes and interfaces, the following formatting rules should be followed:\par
+
+\pard\li720\sa200\sl240\slmult1\qj\f1\bullet  No space between a method name and the parenthesis \ldblquote (\ldblquote  starting its parameter list\par
+\bullet  Open brace \ldblquote\{\rdblquote  appears at the end of the same line as the declaration statement\par
+\bullet  Closing brace \ldblquote\}\rdblquote  starts a line by itself indented to match its corresponding opening\par
+statement, except when it is a null statement the \ldblquote\}\rdblquote  should appear immediately after the\ldblquote\{\ldblquote\par
+
+\pard\li2160\sl240\slmult1\qj class Sample extends Object \{\par
+ \f0\lang1033\tab\f1\lang9 int ivar1;\par
+\f0\lang1033\tab\f1\lang9  int ivar2;\par
+\par
+\f0\lang1033\tab\f1\lang9  Sample(int\f0\lang1033  \f1\lang9  i\f0\lang1033  \f1\lang9 , int\f0\lang1033  \f1\lang9  j) \{\par
+ \f0\lang1033\tab\tab\f1\lang9 ivar1 = i;\par
+ \f0\lang1033\tab\tab\f1\lang9 ivar2 = j;\par
+ \f0\lang1033\tab\f1\lang9\}\par
+\par
+\f0\lang1033\tab\f1\lang9  int emptyMethod()\f0\lang1033\tab\f1\lang9  \{\f0\lang1033  \f1\lang9\}\par
+\f0\lang1033\tab\f1\lang9  ...\par
+\}\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj Methods are separated by a blank line\par
+{\pntext\f2\'B7\tab}Each line should contain at most one statement\f0\par
+{\pntext\f2\'B7\tab}\f1 Do not use the comma operator to group multiple statements unless it is for an obvious reason.\f0\par
+{\pntext\f2\'B7\tab}\f1 A return statement with a value should not use parentheses unless they make the return value\f0\par
+{\pntext\f2\'B7\tab}\f1 The if-else class of statements should have the following form:\par
+
+\pard\li2160\sl240\slmult1\qj if (condition) \{\par
+\f0\lang1033\tab\f1\lang9 statements;\par
+\}\par
+if (condition) \{\par
+
+\pard\li2880\sl240\slmult1\qj statements;\par
+
+\pard\li2160\sl240\slmult1\qj\} else \{\par
+\f0\lang1033\tab\f1\lang9 statements;\par
+\}\par
+if (condition) \{\par
+\f0\lang1033\tab\f1\lang9 statements;\par
+\} else if (condition) \{\par
+\f0\lang1033\tab\f1\lang9 statements;\par
+\} else if (condition) \{\par
+\f0\lang1033\tab\f1\lang9 statements;\par
+\}\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj\f0\lang1033 A for statement should have the following form:\par
+
+\pard\sl240\slmult1\qj\par
+
+\pard\li2160\sl240\slmult1\qj for (initialization;  condition;  update) \{\par
+\tab statements;\par
+\}\par
+\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj\lang9 A while statement should have the following form:\par
+
+\pard\sl240\slmult1\qj\par
+
+\pard\li2160\sl240\slmult1\qj while (condition) \{\par
+\tab statements;\par
+\}\par
+\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj A do-while statement should have the following form:\par
+
+\pard\sl240\slmult1\qj\par
+
+\pard\li2160\sl240\slmult1\qj do \{\par
+statements;\par
+\} while (condition);\par
+\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj A switch statement should have the following form:\par
+
+\pard\sl240\slmult1\qj\par
+
+\pard\li2160\sl240\slmult1\qj switch (condition) \{\par
+case ABC:\par
+
+\pard\li2880\sl240\slmult1\qj statements;\par
+ /* falls through */\par
+
+\pard\li2160\sl240\slmult1\qj case DEF:\par
+
+\pard\li2880\sl240\slmult1\qj statements;\par
+ break;\par
+
+\pard\li2160\sl240\slmult1\qj case XYZ:\par
+
+\pard\li2880\sl240\slmult1\qj statements;\par
+ break;\par
+
+\pard\li2160\sl240\slmult1\qj default:\par
+
+\pard\li2880\sl240\slmult1\qj statements;\par
+ break;\par
+
+\pard\li2160\sl240\slmult1\qj\}\par
+\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj A try-catch statement should have the following format:\par
+
+\pard\sl240\slmult1\qj\par
+
+\pard\li2160\sl240\slmult1\qj try \{\par
+\tab statements;\par
+\}  catch (ExceptionClass e) \{\par
+\tab statements;\par
+\}\par
+\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\qj Two blank lines should always be used in the following circumstances:\f1\par
+
+\pard\li720\sa200\sl240\slmult1\qj\bullet  Between sections of a source file\par
+\bullet  Between class and interface definitions\par
+
+\pard\sa200\sl240\slmult1\qj\f0\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\lang1033 One blank line should always be used in the following circumstances:\f1\par
+
+\pard\li720\sa200\sl240\slmult1\qj\bullet  Between methods\par
+\bullet  Between the local variables in a method and its first statement\par
+\bullet  Between logical sections inside a method to improve readability\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\f0\lang9  Blank spaces should be used in the following circumstances:\par
+
+\pard\li720\sa200\sl240\slmult1\qj\f1\bullet  A keyword followed by a parenthesis should be separated by a space. Example:\par
+\bullet  A blank space should appear after commas in argument lists.\par
+\bullet  All binary operators except . should be separated from their operands by spaces. Blank\f0\lang1033  \f1\lang9 spaces should never separate unary operators such as unary minus, increment (\ldblquote ++\rdblquote ), and\f0\lang1033  \f1\lang9 decrement (\ldblquote --\rdblquote ) from their operands\par
+\bullet  The expressions in a for statement should be separated by blank spaces.\par
+\bullet  Casts should be followed by a blank.\par
+
+\pard\sa200\sl240\slmult1\qj\ul\b Naming Conventions\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\ulnone\b0 Classes Class names should be nouns, in mixed case\f0\lang1033  \f1\lang9 with the first letter of each internal word capitalized. Try to keep your class names simple\f0\lang1033  \f1\lang9 and descriptive. Use whole words\emdash avoid\f0\lang1033  \f1\lang9 acronyms and abbreviations \par
+{\pntext\f2\'B7\tab}Interfaces Interface names should be capitalized like\f0\lang1033  \f1\lang9 class names.\par
+{\pntext\f2\'B7\tab}Methods Methods should be verbs, in mixed case with\f0\lang1033  \f1\lang9 the first letter lowercase, with the first letter of\f0\lang1033  \f1\lang9 each internal word capitalized.\par
+{\pntext\f2\'B7\tab}Variables Except for variables, all instance, class, andclass constants are in mixed case with a lowercase first letter. Internal words start with capital letters.\par
+{\pntext\f2\'B7\tab}Constants The names of variables declared class constants and of ANSI constants should be all\f0\lang1033  \f1\lang9 uppercase with words separated by underscores (\ldblquote _\rdblquote ). \par
+
+\pard\sa200\sl240\slmult1\qj\ul\b Programming Practices\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\ulnone\b0 Don\rquote t make any instance or class variable public without good reason. Often, instance\f0\lang1033  \f1\lang9 variables don\rquote t need to be explicitly set or gotten\f0\lang1033  \f1\lang9 often that happens as a side effect of\f0\lang1033  \f1\lang9 method calls.\par
+{\pntext\f2\'B7\tab}Avoid using an object to access a class (static) variable or method. Use a class name instead\par
+{\pntext\f2\'B7\tab}Numerical constants (literals) should not be coded directly, except for -1, 0, and 1, which can\par
+{\pntext\f2\'B7\tab}appear in a for loop as counter values.\par
+{\pntext\f2\'B7\tab}Avoid assigning several variables to the same value in a single statement. It is hard to read\par
+
+\pard\sa200\sl240\slmult1\qj\ul\b Miscellaneous Practices\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\qj\ulnone\b0 It is generally a good idea to use parentheses liberally in expressions involving mixed operators\f0\lang1033  \f1\lang9 to avoid operator precedence problems\par
+{\pntext\f2\'B7\tab}If an expression containing a binary operator appears before the ? in the ternary ?: operator, it\f0\lang1033  \f1\lang9 should be parenthesized\par
+}
+ 
