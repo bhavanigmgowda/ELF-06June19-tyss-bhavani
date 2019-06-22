@@ -22,12 +22,22 @@ private static final Logger log=Logger.getLogger("bhavani");
 		p2.setCost(2200);
 		p2.setRating(4.5);
 		Pro3Product p3 = new Pro3Product();
-		p3.setName("phone");
+		p3.setName("Iphone");
 		p3.setCost(40000);
 		p3.setRating(4.5);
+		Pro3Product p4 = new Pro3Product();
+		p4.setName("MI");
+		p4.setCost(4000);
+		p4.setRating(5.5);
+		Pro3Product p5 = new Pro3Product();
+		p5.setName("redmi");
+		p5.setCost(15000);
+		p5.setRating(1.5);
 		a.add(p1);
 		a.add(p2);
 		a.add(p3);
+		a.add(p4);
+		a.add(p5);
 		for (Pro3Product p : a) {
 			if (p.getCost() > 2000)
 				log.info("name=" + p.getName() + " cost=" + p.getCost() + " rating=" + p.getRating());

@@ -25,10 +25,17 @@ private static final Logger log=Logger.getLogger("bhavani");
 		p3.setName("sahana");
 		p3.setId(103);
 		p3.setMarks(60);
+		Pro2Student p5 = new Pro2Student();
+		p5.setName("bharath");
+		p5.setId(106);
+		p5.setMarks(75);
 
 		a.add(p1);
 		a.add(p2);
 		a.add(p3);
+		a.add(p4);
+		a.add(p5);
+		
 		for (Pro2Student p : a) {
 			log.info("name=" + p.getName() + " ID=" + p.getId() + " marks=" + p.getMarks());
 		}
