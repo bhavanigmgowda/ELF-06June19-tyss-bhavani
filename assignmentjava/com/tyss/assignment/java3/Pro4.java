@@ -1,6 +1,6 @@
-package com.cov.javaapp.Assignments;
+package com.tyss.assignment.java3;
 
-public class Str2 {
+public class Pro4 {
 
 	public static void main(String[] args) {
 		String str="hi my dear friends";
