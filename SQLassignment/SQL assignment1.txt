@@ -1,0 +1,166 @@
+
+mysql> create database assignment
+    -> ;
+Query OK, 1 row affected (0.28 sec)
+
+mysql> use assignment
+Database changed
+mysql> create table emp(ID int,name varchar,salary int,job varchar,deptno varchar);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'salary int,job varchar,deptno varchar)' at line 1
+mysql> create table emp(ID int primary key,name varchar(20),salary int,job varchar(20),deptno varchar(20));
+Query OK, 0 rows affected (0.78 sec)
+
+mysql> insert into emp values(1,'bhavani',20000,'software developer',10);
+Query OK, 1 row affected (0.22 sec)
+
+mysql> insert into emp values(2,'anjali',45000,'software eng',20);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into emp values(3,'sahana',30000,'software developer',10);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into emp va4,'rashmi',400000,'IT',30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'va4,'rashmi',400000,'IT',30)' at line 1
+mysql> insert into emp values(4,'rashmi',400000,'IT',30);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into emp values(5,'bharath',10000,'tetser',40);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from emp;
++----+---------+--------+--------------------+--------+
+| ID | name    | salary | job                | deptno |
++----+---------+--------+--------------------+--------+
+|  1 | bhavani |  20000 | software developer | 10     |
+|  2 | anjali  |  45000 | software eng       | 20     |
+|  3 | sahana  |  30000 | software developer | 10     |
+|  4 | rashmi  | 400000 | IT                 | 30     |
+|  5 | bharath |  10000 | tetser             | 40     |
++----+---------+--------+--------------------+--------+
+5 rows in set (0.06 sec)
+
+
+1.WAQ to display the employee working in dept 20
+
+mysql> select * from employee1 where deptno=20;
++----+--------+-------+--------------+------+------------+--------+--------+
+| ID | fname  | lname | email        | job  | DOJ        | salary | deptno |
++----+--------+-------+--------------+------+------------+--------+--------+
+|  3 | sahana | r     | bhgaff@gmail | ST   | 2018-05-20 |  35000 |     20 |
+|  4 | rashmi | gowda | bhdg@gmail   | QA   | 2019-09-18 |  20000 |     20 |
++----+--------+-------+--------------+------+------------+--------+--------+
+2 rows in set (0.10 sec)
+
+2.WAQ to display the employee earning more than RS 25000.
+
+mysql> select * from employee1 where salary>25000;
++----+---------+--------+-----------------+-------+------------+--------+--------+
+| ID | fname   | lname  | email           | job   | DOJ        | salary | deptno |
++----+---------+--------+-----------------+-------+------------+--------+--------+
+|  2 | anjali  | m      | anjali@gmail    | HR    | 2018-08-20 |  30000 |     40 |
+|  3 | sahana  | r      | bhgaff@gmail    | ST    | 2018-05-20 |  35000 |     20 |
+|  5 | bharath | t      | gfsgj@gmail.com | IT    | 2018-05-20 |  60000 |     10 |
+|  6 | abcd    | p      | jhjju@gmail     | sales | 2019-09-18 |  40000 |     30 |
+|  7 | ths     | p      | jhjh@gmail      | RND   | 2019-09-18 |  80000 |     30 |
+|  8 | hith    | e      | bhftf@gmail     | IT    | 2019-09-18 |  40000 |     10 |
+|  9 | ganesh  | shetty | jhjas@gmail     | HR    | 2019-09-18 |  80000 |     40 |
+| 10 | kush    | gowda  | jhajh@gmail     | RND   | 2019-09-18 |  40000 |     30 |
+| 11 | ths     | p      | jhjh@gmail      | RND   | 2019-09-18 |  80000 |     30 |
++----+---------+--------+-----------------+-------+------------+--------+--------+
+9 rows in set (0.02 sec)
+
+3.WAQ to display all the employee whose job type is software developer.
+
+mysql> select * from employee1 where job='it';
++----+---------+-------+-----------------+------+------------+--------+--------+
+| ID | fname   | lname | email           | job  | DOJ        | salary | deptno |
++----+---------+-------+-----------------+------+------------+--------+--------+
+|  1 | bhavani | g     | bhavni@gmail    | IT   | 2019-06-18 |  20000 |     10 |
+|  5 | bharath | t     | gfsgj@gmail.com | IT   | 2018-05-20 |  60000 |     10 |
+|  8 | hith    | e     | bhftf@gmail     | IT   | 2019-09-18 |  40000 |     10 |
++----+---------+-------+-----------------+------+------------+--------+--------+
+3 rows in set (0.05 sec)
+
+4.WAQ to display the employee working  in dept 10,20,40
+
+mysql> select * from employee1 where deptno in (10,20,40);
++----+---------+--------+-----------------+------+------------+--------+--------+
+| ID | fname   | lname  | email           | job  | DOJ        | salary | deptno |
++----+---------+--------+-----------------+------+------------+--------+--------+
+|  1 | bhavani | g      | bhavni@gmail    | IT   | 2019-06-18 |  20000 |     10 |
+|  2 | anjali  | m      | anjali@gmail    | HR   | 2018-08-20 |  30000 |     40 |
+|  3 | sahana  | r      | bhgaff@gmail    | ST   | 2018-05-20 |  35000 |     20 |
+|  4 | rashmi  | gowda  | bhdg@gmail      | QA   | 2019-09-18 |  20000 |     20 |
+|  5 | bharath | t      | gfsgj@gmail.com | IT   | 2018-05-20 |  60000 |     10 |
+|  8 | hith    | e      | bhftf@gmail     | IT   | 2019-09-18 |  40000 |     10 |
+|  9 | ganesh  | shetty | jhjas@gmail     | HR   | 2019-09-18 |  80000 |     40 |
++----+---------+--------+-----------------+------+------------+--------+--------+
+7 rows in set (0.00 sec)
+
+5.WAQ to display all the employee whose first name is having 'h' as 2nd character.
+
+mysql> select * from employee1 where fname like '_h%';
++----+---------+-------+-----------------+------+------------+--------+--------+
+| ID | fname   | lname | email           | job  | DOJ        | salary | deptno |
++----+---------+-------+-----------------+------+------------+--------+--------+
+|  1 | bhavani | g     | bhavni@gmail    | IT   | 2019-06-18 |  20000 |     10 |
+|  5 | bharath | t     | gfsgj@gmail.com | IT   | 2018-05-20 |  60000 |     10 |
+|  7 | ths     | p     | jhjh@gmail      | RND  | 2019-09-18 |  80000 |     30 |
+| 11 | ths     | p     | jhjh@gmail      | RND  | 2019-09-18 |  80000 |     30 |
++----+---------+-------+-----------------+------+------------+--------+--------+
+
+6.WAQ to display the employee whose fname is having letter 'L' as  2nd char.
+
+mysql> select * from employee1 where fname like '%a%a%';
++----+---------+-------+-----------------+------+------------+--------+--------+
+| ID | fname   | lname | email           | job  | DOJ        | salary | deptno |
++----+---------+-------+-----------------+------+------------+--------+--------+
+|  1 | bhavani | g     | bhavni@gmail    | IT   | 2019-06-18 |  20000 |     10 |
+|  2 | anjali  | m     | anjali@gmail    | HR   | 2018-08-20 |  30000 |     40 |
+|  3 | sahana  | r     | bhgaff@gmail    | ST   | 2018-05-20 |  35000 |     20 |
+|  5 | bharath | t     | gfsgj@gmail.com | IT   | 2018-05-20 |  60000 |     10 |
++----+---------+-------+-----------------+------+------------+--------+--------+
+4 rows in set (0.00 sec)
+
+7.WAQ to display the emp whose fname is having atleast 2 'a' char
+
+mysql> select * from employee1 where fname like '%a%a%';
++----+---------+-------+-----------------+------+------------+--------+--------+
+| ID | fname   | lname | email           | job  | DOJ        | salary | deptno |
++----+---------+-------+-----------------+------+------------+--------+--------+
+|  1 | bhavani | g     | bhavni@gmail    | IT   | 2019-06-18 |  20000 |     10 |
+|  2 | anjali  | m     | anjali@gmail    | HR   | 2018-08-20 |  30000 |     40 |
+|  3 | sahana  | r     | bhgaff@gmail    | ST   | 2018-05-20 |  35000 |     20 |
+|  5 | bharath | t     | gfsgj@gmail.com | IT   | 2018-05-20 |  60000 |     10 |
++----+---------+-------+-----------------+------+------------+--------+--------+
+4 rows in set (0.00 sec)
+
+8.WAQ to display the emp whose lname is having letter  'e' as the 2nd last char.
+mysql> select * from employee1 where lname like '%e';
++----+-------+-------+-------------+------+------------+--------+--------+
+| ID | fname | lname | email       | job  | DOJ        | salary | deptno |
++----+-------+-------+-------------+------+------------+--------+--------+
+|  8 | hith  | e     | bhftf@gmail | IT   | 2019-09-18 |  40000 |     10 |
++----+-------+-------+-------------+------+------------+--------+--------+
+1 row in set (0.00 sec)
+9.WAQ to display the emp who are having exactly 5 characters in their lastname.
+mysql> select * from employee1 where lname like '_____';
++----+--------+-------+-------------+------+------------+--------+--------+
+| ID | fname  | lname | email       | job  | DOJ        | salary | deptno |
++----+--------+-------+-------------+------+------------+--------+--------+
+|  4 | rashmi | gowda | bhdg@gmail  | QA   | 2019-09-18 |  20000 |     20 |
+| 10 | kush   | gowda | jhajh@gmail | RND  | 2019-09-18 |  40000 |     30 |
++----+--------+-------+-------------+------+------------+--------+--------+
+2 rows in set (0.00 sec)
+
+10.WAQ to display the emp whose salary is between 20000 and 30000.
+
+mysql> select * from employee1 where salary between 20000 and 30000;
++----+---------+-------+--------------+------+------------+--------+--------+
+| ID | fname   | lname | email        | job  | DOJ        | salary | deptno |
++----+---------+-------+--------------+------+------------+--------+--------+
+|  1 | bhavani | g     | bhavni@gmail | IT   | 2019-06-18 |  20000 |     10 |
+|  2 | anjali  | m     | anjali@gmail | HR   | 2018-08-20 |  30000 |     40 |
+|  4 | rashmi  | gowda | bhdg@gmail   | QA   | 2019-09-18 |  20000 |     20 |
++----+---------+-------+--------------+------+------------+--------+--------+
+3 rows in set (0.03 sec)
