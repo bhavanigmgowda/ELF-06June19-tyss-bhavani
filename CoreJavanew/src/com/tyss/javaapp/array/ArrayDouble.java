@@ -1,5 +1,8 @@
 package com.tyss.javaapp.array;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ArrayDouble {
 	public static void main(String[] args) {
 		double[] a = { 5.6, 2.1, 1.4, 4.2, 1.3 };
@@ -14,6 +17,6 @@ public class ArrayDouble {
 			}
 		}
 		for (int i = 0; i < a.length - 1; i++)
-			System.out.println(a[i]);
+			log.info(""+a[i]);
 	}
 }

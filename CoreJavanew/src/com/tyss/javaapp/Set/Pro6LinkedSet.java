@@ -1,4 +1,4 @@
-package com.tyss.javaapp.Set;
+package com.tyss.javaapp.set;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;

@@ -1,5 +1,6 @@
 package com.tyss.javaapp.array;
-
+import lombok.extern.java.Log;
+@Log
 public class ForEachArray {
 	public static void main(String[] args) {
 		int a[]= {1,2,6,3,4};
