@@ -1,4 +1,4 @@
-package com.tyss.javaapp.Set;
+package com.tyss.javaapp.set;
 
 public class Product implements Comparable<Product> {
 	String name;

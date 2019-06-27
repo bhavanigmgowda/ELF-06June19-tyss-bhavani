@@ -1,4 +1,4 @@
-package com.tyss.javaapp.Map;
+package com.tyss.javaapp.map;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -21,10 +21,11 @@ public class Pro4Key {
 		System.out.println("***value***");
 		Collection<Integer> ci = hm.values();
 		Iterator<Integer> it = ci.iterator();
-		while (it.hasNext()) {
+		while (it.hasNext()) {    
 			Integer r = it.next();
 			System.out.println(r);
 		}
 	}
 
 }
+

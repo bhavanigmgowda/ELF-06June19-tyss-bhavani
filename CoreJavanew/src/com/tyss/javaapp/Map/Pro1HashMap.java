@@ -1,4 +1,4 @@
-package com.tyss.javaapp.Map;
+package com.tyss.javaapp.map;
 
 import java.util.HashMap;
 import java.util.Map;
