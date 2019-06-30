@@ -1,0 +1,4 @@
+body{
+    /* background-image: repeating-linear-gradient(to right,violet,blue,red,yellow,indigo,orange);*/
+    background-image: repeating-radial-gradient(to right,violet,blue,red,yellow,indigo,orange); 
+}

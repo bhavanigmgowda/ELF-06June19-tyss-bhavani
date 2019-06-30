@@ -1,0 +1,58 @@
+body{
+    
+    background-color: aqua;    
+}
+.heading{
+    color: blue;
+    background: yellow;
+}
+#paragraph{
+    padding: 20px;
+    background: yellowgreen;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-style: italic;
+    font-size: 2em;
+    text-shadow: 2px 2px green;
+    text-indent:40px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 2px;
+}
+
+input[type="text"], input[type="password"]{
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    
+}
+input[type="button"]{
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    display: block;
+}
+
+#inner1{
+    height: 200px;
+    width: 40%;
+    float: left;
+    background-color:pink;
+    margin: 0px 20px 30px 40px;
+    
+    box-shadow: 5px 5px 5px 8px black;
+}
+#inner2{
+    height: 200px;
+    
+    background-color:yellow;
+   
+    margin: 0px 20px 30px 40px;
+}
+img{
+    border: 4px cadetblue;
+    border-radius: 99%;
+    width: 20%;
+    height: 40%;
+    margin: auto;
+}
+
+
