@@ -1,0 +1,51 @@
+body{
+    padding: 0%;
+    margin: 0%;
+}
+nav{
+    width: 100%;
+    background: black;
+   
+}
+ul{
+    margin: 0;
+}
+li{
+    display: inline;
+}
+ul li a {
+    text-decoration: none;
+    font-size: 25px;
+   padding: 30px;
+    color: white;
+}
+input{
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 40px;
+    background: greenyellow ;
+    
+}
+input:hover{
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 40px;
+    background: gray;
+    border: green;
+    box-shadow: 0 0 4px 8px green;
+
+}
+a:hover{
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 40px;
+    background: maroon;
+    border: rgb(124, 180, 124);
+    box-shadow: 0 0 4px 8px rgb(34, 77, 141);
+    padding: 15px;
+    
+
+}
