@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title>sample example</title>
+	</head>
+	<body>
+		<h1>ELF progrm</h1>
+		<h2>ELF progrm</h2>
+		<h3>ELF progrm</h3>
+		<h4>ELF progrm</h4>
+		<h5>ELF progrm</h5>
+		<h6>ELF progrm</h6>
+	</body>
+</html>
