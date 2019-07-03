@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class Person implements Animal, Human {
 	private static final Logger loger = Logger.getLogger("google");
-
+ 
 	public void eat() {
 		loger.log(Level.SEVERE, "eating food");
 	}

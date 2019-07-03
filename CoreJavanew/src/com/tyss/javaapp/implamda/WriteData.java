@@ -2,11 +2,14 @@ package com.tyss.javaapp.implamda;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import lombok.extern.java.Log;
 
 @Log
 public class WriteData {
+	private static final Logger log=Logger.getLogger("bhavani");
+
 	public static void main(String[] args) {
 		String msg = "hi ";
 		byte b[] = msg.getBytes();

@@ -1,9 +1,13 @@
 package com.tyss.javaapp.implamda;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
+
 import lombok.extern.java.Log;
 @Log
 public class TestE {
+	private static final Logger log=Logger.getLogger("bhavani");
+
 	public static void main(String[] args) {
 		ArrayList<Integer> al = new ArrayList<Integer>();
 		al.add(20);

@@ -13,6 +13,7 @@ public class Test6 {
 		
 		ExecutorService s= Executors.newFixedThreadPool(2);
 		s.execute(t1);
+		
 		s.execute(t2);
 		s.execute(t3);
 		s.execute(t4);

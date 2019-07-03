@@ -13,6 +13,7 @@ public class MyArrayTest {
 		for (int i = 0; i < dataSize; i++) {
 			m.add(i);
 		}
+		log.info("");
 		log.info("remove the element");
 		m.remove(3);
 		for (int j = 0; j < dataSize; j++) {

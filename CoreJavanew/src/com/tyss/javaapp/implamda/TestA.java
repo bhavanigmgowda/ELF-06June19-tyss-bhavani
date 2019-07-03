@@ -2,11 +2,14 @@ package com.tyss.javaapp.implamda;
 
 import java.util.Comparator;
 import java.util.TreeSet;
+import java.util.logging.Logger;
 
 import lombok.extern.java.Log;
 
 @Log
 public class TestA {
+	private static final Logger log=Logger.getLogger("bhavani");
+
 	public static void main(String[] args) {
 		Comparator<Emp> c1 = (m, f) ->  m.name.compareTo(f.name);
 		
