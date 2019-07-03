@@ -17,7 +17,7 @@ public class TryRes {
 		Statement stmt = null;
 		ResultSet rs = null;
 	
-		try(
+		try {
 				driver = new Driver();
 
 				DriverManager.deregisterDriver(driver);
@@ -28,7 +28,7 @@ public class TryRes {
 				String query = "select * from EMPLOYEE_INFO";
 				stmt = con.createStatement();
 				rs = stmt.executeQuery(query);
-				){
+				
 			while (rs.next()) {
 				log.info("  ID (PK)	===>	" + rs.getInt("ID"));
 				log.info("  NAME	===>	" + rs.getString("NAME"));

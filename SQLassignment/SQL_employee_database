@@ -1,0 +1,66 @@
+CREATE DATABASE TYSS_DB;
+
+EMPLOYEE_INFO									EMPLOYEE_OTHER_INFO							EMPLOYEE_ ADDRESINFO			DEPARTMENT_INFO
+=============                                   ===================                         ====================            ===============
+ID (PK)			(INT)                           ID(PK)					(INT)	            ID(PK)			(INT)           DEPT_ID(PK)	(INT)
+NAME			(VARCHAR)       				PAN						(VARCHAR)           ADDRES_TYPE(PK)	(VARCHAR)       DEPT_NAME	(VARCHAR)
+AGE				(INT)                           ISMARRIED				(BOOLEAN)           ADDRESS1		(VARCHAR)
+GENDER			(VARCHAR)                       BLOOD_GROUP				(VARCHAR)           ADDRESS2		(VARCHAR)
+SALARY			(DOUBLE)                        ISCHALLENGED			(BOOLEAN)           LANDMARK		(VARCHAR)
+PHNUM			(LONG)                          EMERGENCY_CONTACT_NUMBER(LONG)              CITY 			(VARCHAR)
+JOINING_DATE	(DATE)                          EMERGENCY_CONTACT_NAME	(VARCHAR)           STATE 			(VARCHAR)
+ACCOUNT_NUMBER	(INT)                           NATIONALITY				(VARCHAR)           PINCODE 		(INT)
+EMAIL			(VARCHAR)                      	RELIGION				(VARCHAR)
+DESIGNATION		(VARCHAR)                       FATHER_NM				(VARCHAR)
+DOB				(DATE)                          MOTHER_NM				(VARCHAR)
+DEPT_ID(FK)		(INT)                           SPOUSE_NM				(VARCHAR)
+MNGR_ID			(INT)                           HUSBAND_NM				(VARCHAR)
+                                                PASSPORT				(VARCHAR)
+												ADHAR					(LONG)
+
+
+
+EMPLOYEE_EDUCATION_INFO					EMPLOYEE_EXPERINCEINFO					TRAINING_INFO					EMPLOYEE_TRAI                  NING
+=======================                 ======================                  =============                   ============
+ID(PK)				(INT)               ID(PK)			(INT)                   COURSE_ID(PK)	(INT)           ID(PK)			(INT)
+EDUCATION_TYPE(PK)	(VARCHAR)           COMPANY_NM(PK)	(VARCHAR)               COURSE_NAME		(VARCHAR)       COURSE_ID(PK) 	(INT)
+DEGREE_TYPE			(VARCHAR)           DESIGNATION		(VARCHAR)               DURATION		(VARCHAR)
+BRANCH				(VARCHAR)           JOINIMG_DATE	(DATE)                  COURSE_TYPE		(VARCHAR)
+COLLAGE_NM			(VARCHAR)           LEAVING_DATE	(DATE)
+UNIVERSITY			(VARCHAR)
+YOP					(VARCHAR)
+PERCENTAGE			(DOUBLE)
+LOCATION			(VARCHAR)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

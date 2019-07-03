@@ -13,24 +13,18 @@ import com.mysql.jdbc.Driver;
 import lombok.extern.java.Log;
 
 @Log
-public class MyFirstJDBCProgram {
+public class MyFirstJDBCTryWithResorce {
 
 	public static void main(String[] args) {
 		Driver driver = null;
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		try {
+		String dbUrl = "jdbc:mysql://localhost:3306/tyss_db?";
+		String query = "select * from EMPLOYEE_INFO ";
+		try (Connection con = DriverManager.getConnection(dbUrl, "root", "root");
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(query);) {
 
 			driver = new Driver();
 			DriverManager.registerDriver(driver);
-			String dbUrl = "jdbc:mysql://localhost:3306/tyss_db?";
-
-			con = DriverManager.getConnection(dbUrl, "root", "root");
-			log.info("class name" + con.getClass());
-			String query = "select * from EMPLOYEE_INFO ";
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
 				log.info("  ID (PK)	===>	" + rs.getInt(1));
@@ -48,19 +42,9 @@ public class MyFirstJDBCProgram {
 				log.info("  MNGR_ID ===>	" + rs.getInt("MNGR_ID"));
 
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
-			  finally {
-			  
-			  try { if (con != null) { con.close(); } if (stmt != null) { stmt.close(); }
-			  if (rs != null) { rs.close(); }
-			  
-			  } catch (SQLException e) { e.printStackTrace();
-			  
-			  } }
-			 
+		}
 
 	}
 }

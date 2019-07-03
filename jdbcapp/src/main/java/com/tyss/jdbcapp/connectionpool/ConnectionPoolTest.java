@@ -1,33 +1,26 @@
-package com.tyss.jdbcapp;
+package com.tyss.jdbcapp.connectionpool;
 
+import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-//import org.gjt.mm.mysql.Driver;
-
-import com.mysql.jdbc.Driver;
 
 import lombok.extern.java.Log;
 
 @Log
-public class MyFirstJDBCProgram {
+public class ConnectionPoolTest {
 
 	public static void main(String[] args) {
-		Driver driver = null;
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
+		ConnectionPool pool=null;
 		try {
-
-			driver = new Driver();
-			DriverManager.registerDriver(driver);
-			String dbUrl = "jdbc:mysql://localhost:3306/tyss_db?";
-
-			con = DriverManager.getConnection(dbUrl, "root", "root");
-			log.info("class name" + con.getClass());
+			pool=ConnectionPool.getConnectionPool();
+			con=pool.getConnectionFromPool();
+			
 			String query = "select * from EMPLOYEE_INFO ";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(query);
@@ -49,13 +42,23 @@ public class MyFirstJDBCProgram {
 
 			}
 
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException | IOException  e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		} 
 			  finally {
 			  
-			  try { if (con != null) { con.close(); } if (stmt != null) { stmt.close(); }
-			  if (rs != null) { rs.close(); }
+			  try { 
+				  pool.returnConnectionToPool(con);
+				  if (con != null) { 
+					  con.close(); 
+					  } 
+				  if (stmt != null) { 
+					  stmt.close();
+					  }
+			  if (rs != null) {
+				  rs.close(); }
 			  
 			  } catch (SQLException e) { e.printStackTrace();
 			  
