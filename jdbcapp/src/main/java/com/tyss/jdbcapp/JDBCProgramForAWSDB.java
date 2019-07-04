@@ -6,17 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-//import org.gjt.mm.mysql.Driver;
-
-import com.mysql.jdbc.Driver;
-
 import lombok.extern.java.Log;
 
 @Log
 public class JDBCProgramForAWSDB {
 
-
-	
 	public static void main(String[] args) {
 		Connection con = null;
 		Statement stmt = null;
@@ -25,7 +19,7 @@ public class JDBCProgramForAWSDB {
 
 			Class.forName("com.mysql.jdbc.Driver");
 
-			String dbUrl = "jdbc:mysql://mysql.cusnhfizwsgq.us-east-2.rds.amazonaws.com:3306/bhavanidatabase?user=root&password=rootroot" ;
+			String dbUrl = "jdbc:mysql://mysql.cusnhfizwsgq.us-east-2.rds.amazonaws.com:3306/bhavanidatabase?user=root&password=rootroot";
 
 			con = DriverManager.getConnection(dbUrl);
 			log.info("class name" + con.getClass());
