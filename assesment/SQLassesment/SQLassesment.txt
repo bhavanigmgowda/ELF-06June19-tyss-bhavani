@@ -129,7 +129,7 @@ select e.name ,d.dept_name from employee_info e inner join department_info d on 
 
 29. Write a query to display all the details of employee whose name begins with the consonants.
 
-	select * from employee_info where name like "a%" or name like "e%" or name like "i%" or name like "o%" or name like "u%";
+	select * from employee_info where name not like "a%" and name not  like "e%" and name not like "i%" and name not  like "o%" and name not like "u%";
 
 30. Create a Views from Employee_Info table .Views should have all  the record whose salary is greater than 10000.
 
@@ -151,7 +151,7 @@ CREATE
     TRIGGER `tyss_db`.`emp` BEFORE DELETE
     ON `tyss_db`.`employee_info`
     FOR EACH ROW BEGIN
-		insert into emp values(new.name,new.id,new.salary,new.age);
+		insert into emp (select * from employee_info );
     END$$
 
 
