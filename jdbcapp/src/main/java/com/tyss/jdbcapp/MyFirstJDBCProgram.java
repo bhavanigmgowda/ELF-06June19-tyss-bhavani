@@ -16,26 +16,23 @@ import lombok.extern.java.Log;
 public class MyFirstJDBCProgram {
 
 	public static void main(String[] args) {
-		Driver driver = null;
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
+		
 		try {
 
-			driver = new Driver();
+			Driver driver = new Driver();
 			DriverManager.registerDriver(driver);
 			String dbUrl = "jdbc:mysql://localhost:3306/tyss_db?";
 
-			con = DriverManager.getConnection(dbUrl, "root", "root");
+			Connection con = DriverManager.getConnection(dbUrl, "root", "root");
 			log.info("class name" + con.getClass());
 			String query = "select * from EMPLOYEE_INFO ";
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(query);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
 				log.info("  ID (PK)	===>	" + rs.getInt(1));
 				log.info("  NAME	===>	" + rs.getString(2));
-				log.info("  AGE		===>		" + rs.getInt("AGE"));
+				log.info("  AGE		===>	" + rs.getInt("AGE"));
 				log.info("  GENDER	===>	" + rs.getString("GENDER"));
 				log.info("  SALARY	===>	" + rs.getInt("SALARY"));
 				log.info("  PHNUM	===>	" + rs.getInt("PHNUM"));
@@ -52,14 +49,6 @@ public class MyFirstJDBCProgram {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} 
-			  finally {
-			  
-			  try { if (con != null) { con.close(); } if (stmt != null) { stmt.close(); }
-			  if (rs != null) { rs.close(); }
-			  
-			  } catch (SQLException e) { e.printStackTrace();
-			  
-			  } }
 			 
 
 	}

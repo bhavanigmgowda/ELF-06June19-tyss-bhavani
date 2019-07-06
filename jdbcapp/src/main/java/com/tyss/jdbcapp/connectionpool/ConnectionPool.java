@@ -17,7 +17,7 @@ public class ConnectionPool {
 	private String dbUrl;
 	private String driverClassNM;
 
-	public static ConnectionPool getConnectionPool() throws Exception {	
+	public static ConnectionPool getConnectionPool() throws Exception {	// used for creating an object 
 		if (poolRef == null) {
 			poolRef = new ConnectionPool();
 		}
@@ -39,6 +39,14 @@ public class ConnectionPool {
 		pool.add(con);
 	}
 	
+	private void initilize() throws ClassNotFoundException, SQLException {
+		pool= new Vector<>();
+		Class.forName(driverClassNM);
+		for (int i = 0; i < poolSize; i++) {
+			con = DriverManager.getConnection(dbUrl, userNM, password);
+			pool.add(con);
+		}
+	}
 	
 	private void loadPropert() throws IOException {
 		userNM = PropertyUtil.getProperty().getProperty(ConnectionPoolConst.USERNM);
@@ -49,13 +57,6 @@ public class ConnectionPool {
 
 	}
 
-	private void initilize() throws ClassNotFoundException, SQLException {
-		pool= new Vector<>();
-		Class.forName(driverClassNM);
-		for (int i = 0; i < poolSize; i++) {
-			con = DriverManager.getConnection(dbUrl, userNM, password);
-			pool.add(con);
-		}
-	}
+	
 
 }
