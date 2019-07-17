@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="messageBean" class="com.tyss.springcore.bean.MessageBean">
+<property name="message" value="welcome to Spring"></property>
+</bean>
+<!--  <bean id="empBean" class="com.tyss.springcore.bean.EmpBean" scope="prototype" 
+ init-method="afterPropertiesSet" destroy-method="destroy">
+
+</bean> -->
+  
+  <bean id="emp" class="com.tyss.springcore.bean.EmpBean" scope="prototype" autowire="constructor" >
+  <constructor-arg name="name" value="Admin"></constructor-arg>
+  <constructor-arg name="id" value="101"></constructor-arg>
+  <!-- <property name="deptBean" ref="deptBean"></property> --><!-- By Default -->
+</bean>
+<bean id="abc" class="com.tyss.springcore.bean.DeptBean" scope="prototype" primary="true">
+  <property name="deptName" value="IT"></property>
+  <property name="deptId" value="10"></property>
+
+</bean>
+<bean id="xyz" class="com.tyss.springcore.bean.DeptBean" scope="prototype" >
+  <property name="deptName" value="HR"></property>
+  <property name="deptId" value="20"></property>
+
+</bean>
+<bean id="klm" class="com.tyss.springcore.bean.DeptBean" scope="prototype" >
+  <property name="deptName" value="IT"></property>
+  <property name="deptId" value="30"></property>
+
+</bean>
+                 
+</beans>
+
