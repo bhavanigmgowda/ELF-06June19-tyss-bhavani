@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+  }
+  
+  textarea {
+    width: 643px;
+    height: 489px;
+    overflow: scroll;
+    margin: auto;
+    display: inline-block;
+    background:100px;
+    outline: none;
+    font-family: Courier, sans-serif;
+    
+  }
+  
+  iframe {
+    width: 643px;
+    height: 489px;
+     
+  }
