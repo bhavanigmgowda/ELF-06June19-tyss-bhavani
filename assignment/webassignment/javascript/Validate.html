@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validate Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <style>
+            .form-size {
+                height: 200px;
+                width: 400px;
+            }
+            .margin-for-element {
+                margin-top: 200px;
+                margin-left: 600px;
+            }
+          
+            #pwd:focus, #confirm:focus {
+             outline: none;
+            }
+            #invalidPwd, #invalidEmail {
+                visibility: hidden;
+            }
+            .redFont {
+                color: red;
+            }
+        </style>
+</head>
+<body>
+    <div class="container margin-for-element">
+    <h2>Login Page</h2>
+    <br><br>
+        <form class="form-size">
+            <input type="email" name="email" class="form-control margin-bottom-input" placeholder="Enter email" onkeyup="checkEmail()" />
+            <p id="invalidEmail" class="redFont">Invalid Email</p>
+            <div class="form-control">
+                <input type="password" id="pwd"  name="password" style="border: none !important;width:340px;" placeholder="Enter password"/>
+                <span class="glyphicon glyphicon-eye-open" onclick="showPassword()"></span>
+            </div>
+            <br>
+            <div class="form-control">
+                <input type="password" id="confirm" name="confirm" onkeyup="checkPassword()" style="border: none !important;width:340px;" placeholder="Confirm password"/>
+                <span class="glyphicon glyphicon-eye-open" onclick="showConfirmPassword()"></span>
+            </div>
+            <p id="invalidPwd" class="redFont">Password and confirm password doesnt match</p>
+            <br>
+            <button id = "submitButton" type="button" class="btn btn-primary" disabled>Submit</button>
+        </form>
+    </div>
+    <script src = "Validate.js"></script>
+</body>
+</html>

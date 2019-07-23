@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Table</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <style>
+            .form-size {
+                height: 200px;
+                width: 400px;
+            }
+            .margin-for-element {
+                margin-top: 50px;
+                margin-left: 600px;
+            }
+            .tab-head {
+                border: 1px solid black;
+                font-weight: bold;
+            }
+            .tab-data {
+                border: 1px solid black;
+            }
+            
+        </style>
+</head>
+<body>
+        <div class="container margin-for-element">
+                <h2>Student Details</h2>
+                <br><br>
+                    <form class="form-size">
+                        <input type="text" name="name" class="form-control" placeholder="Enter name"/>
+                        <br>
+                        <input type="number" name="id" class="form-control" placeholder="Enter ID"/>
+                        <br>
+                        <button id = "submitButton" type="button" class="btn btn-primary" onclick="showTable()">Submit</button>
+                    </form>
+                </div>
+    <script src = "createTable.js"></script>
+</body>
+</html>
