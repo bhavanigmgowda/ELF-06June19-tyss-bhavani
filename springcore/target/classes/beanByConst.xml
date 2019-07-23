@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="messageBean" class="com.tyss.springcore.bean.MessageBean">
+<property name="message" value="welcome to Spring"></property>
+</bean>
+<!--  <bean id="empBean" class="com.tyss.springcore.bean.EmpBean" scope="prototype" 
+ init-method="afterPropertiesSet" destroy-method="destroy">
+
+</bean> -->
+  <import resource="beanObject.xml"/>
+ <bean id="empBean" class="com.tyss.springcore.bean.EmpBean" scope="prototype" autowire="constructor" >
+  <constructor-arg name="emp" value="Admin"></constructor-arg>
+  <constructor-arg name="id" value="10"></constructor-arg>
+     
+</bean>
+
+</beans>
+
