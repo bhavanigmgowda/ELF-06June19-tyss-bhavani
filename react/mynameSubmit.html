@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script><!-- //convert JXS to JS -->
+
+<body>
+     <div id="mydiv"></div>
+    <script type="text/babel">
+  class Submit extends React.Component{
+        constructor(props){//init
+            super(props);//init parent
+            console.log('test',props.text);
+                  
+        this.state={
+              name:""
+            };
+           this.showText = this.showText.bind(this);
+
+           console.log("constructor")
+
+        }
+        showText(){
+            this.setState({name:"bhavani"})
+            }
+        
+        componentDidMount(){
+            console.log("ComponentDidMount")
+
+        } 
+            render(){
+
+                console.log("called")
+                return <div><input type="text" value={this.state.name}/>
+                <input type="submit" onClick={this.showText}/></div>
+            }
+  }
+
+  
+    ReactDOM.render(<Submit />,document.getElementById('mydiv'))//2 par how where
+    //ReactDOM.componentDidMount(document.getElementById('mydiv'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script><!-- //convert JXS to JS -->
+
+<body>
+     <div id="mydiv"></div>
+     <div id="mydiv2"></div>
+    <script type="text/babel">
+  class Hi extends React.Component{
+        constructor(props){//init
+            super(props);//init parent
+            console.log('test',props.text);
+            this.state={
+                display:props.text!=undefined?props.age:"define"
+            };
+          
+        }
+            render(){
+                return <h1>Hellooooo {this.state.display}</h1>
+            }
+    }  
+
+    class Green extends React.Component{
+        constructor(props){//init
+            super(props);//init parent
+            console.log('test',props.text);
+            this.myadd={
+                display:props.text!=undefined?props.text:"GreenClass"
+            };
+          
+        }
+            render(){
+                return <h1>Hellooooo {this.myadd.display}</h1>
+            }
+    }  
+
+
+    ReactDOM.render(<Hi /*can be classs or function*/ text="abc" age="756" />,document.getElementById('mydiv'))//2 par how where
+    ReactDOM.render(<Green /*can be classs or function*/ text="abc" age="756" />,document.getElementById('mydiv2'))
+    </script>
+</body>
+</html>

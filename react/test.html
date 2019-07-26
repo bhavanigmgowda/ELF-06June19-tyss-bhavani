@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script><!-- //convert JXS to JS -->
+
+<body>
+     <div id="mydiv"></div>
+    <script type="text/babel">
+  class Hi extends React.Component{
+        constructor(props){//init
+            super(props);//init parent
+            console.log('test',props.text);
+            this.state={
+                display: "hi",
+                 add:props.text!=undefined?props.age:"define"
+            };
+           this.myadd={
+                myall:"aaaa"
+            };
+        }
+            render(){
+                return <h1>The {this.myadd.myall}</h1>
+            }
+    }  
+
+    
+function Hello() {
+ 
+                return <h1>The</h1>
+            
+    }
+
+
+    ReactDOM.render(<Hello /*can be classs or function*/ text="abc" age="756" />,document.getElementById('mydiv'))//2 par how where
+    </script>
+</body>
+</html>

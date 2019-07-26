@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script><!-- //convert JXS to JS -->
+
+<body>
+     <div id="mydiv"></div>
+    <script type="text/babel">
+  class Hi extends React.Component{
+        constructor(props){//init
+            super(props);//init parent
+            console.log('test',props.text);
+            this.state={
+               show:true
+            };
+          
+        }
+      delHeader=()=>{
+          this.setState({show:false});
+      }
+      
+            render(){
+                let myheader;
+                if(this.state.show){
+                    myheader=<Child/>;
+                };
+                return(<div>{myheader}
+                <button type="button"onClick={this.delHeader}>Delete header</button>
+                </div>);
+            }
+    }  
+
+
+    class Child extends React.Component{
+        componentWillUnmount(){
+            alert("The Component name ");
+        }
+        render(){
+            return(<h1>Hello World!</h1>);
+        }
+    }
+
+
+    ReactDOM.render(<Hi/>,document.getElementById('mydiv'))//2 par how where
+    </script>
+</body>
+</html>
