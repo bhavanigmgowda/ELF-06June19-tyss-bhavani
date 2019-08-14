@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="569"/>
+		<item key="DIALOG_Y_ORIGIN" value="313"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="&lt;/form"/>
+		<list key="findhistory">
+			<item value="&lt;/form"/>
+			<item value="&lt;form"/>
+			<item value="[&lt;%=i%&gt;]"/>
+			<item value="i"/>
+			<item value="[1]"/>
+			<item value="[0]"/>
+			<item value="empSubmit"/>
+			<item value="createEmployeeInfo"/>
+			<item value="add"/>
+			<item value="bo"/>
+			<item value="spring"/>
+			<item value="form"/>
+			<item value="Company Name"/>
+			<item value="        &lt;button type=&quot;submit&quot; class=&quot;form-control&quot; &gt; Submit&lt;/button&gt;"/>
+			<item value="&lt;form&gt;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="[&lt;%=k%&gt;]"/>
+			<item value="l"/>
+			<item value="k"/>
+			<item value="j"/>
+			<item value="[&lt;%=i%&gt;]"/>
+			<item value="[&lt;%=i]"/>
+			<item value="educationInfoBean1"/>
+			<item value="LoginJSP.jsp"/>
+			<item value=""/>
+			<item value="&lt;%"/>
+			<item value="getSessionFactory"/>
+			<item value="getSession"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="689"/>
+		<item key="DIALOG_Y_ORIGIN" value="477"/>
+		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="true"/>
+	<item key="J2EE_EXPORT_SOURCE" value="false"/>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="D:\apache-tomcat-9.0.21\emp-springmvc.war"/>
+		<item value="D:\apache-tomcat-9.0.22\webapps\emp-springmvc.war"/>
+		<item value="D:\apache-tomcat-8.5.43\emp-springmvc.war"/>
+		<item value="D:\apache-tomcat-9.0.21\webapps\emp-springmvc.war"/>
+		<item value="D:\apache-tomcat-9.0.21\webapps\emp.war"/>
+	</list>
+</section>

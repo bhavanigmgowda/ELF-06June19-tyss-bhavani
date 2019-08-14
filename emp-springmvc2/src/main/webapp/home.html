@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+
+	
+	
+	<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+ EMPLOYEE INFORMATION
+  </a>
+  <button class="btn btn-primary" type="collapse" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+EMPLOYEE OTHER INFORMATION  </button>
+</p>
+<div class="collapse" id="collapseExample1">
+  <div class="card card-body">
+	<p class="h3" style="margin-left: 40%">EMPLOYEE INFORMATION</p>
+	<hr>
+<form action="http://localhost/emp/save" method="post">
+		<div class="row">
+			<div class="col">
+				<label for="exampleInputEmail1">ID</label> <input type="text"
+					class="form-control" placeholder="ID" name="id">
+			</div>
+			<div class="col">
+				<label for="exampleInputEmail1">ACCOUNT NUMBER</label> <input
+					type="text" class="form-control" placeholder="ACCOUNT NUMBER"  name="accnumber">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label for="exampleInputEmail1">NAME</label> <input type="text"
+					class="form-control" placeholder="NAME"  name="name">
+			</div>
+			<div class="col">
+				<label for="exampleInputEmail1">EMAIL ID</label> <input type="text"
+					class="form-control" placeholder="EMAIL ID"  name="email">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label for="exampleInputEmail1">AGE</label>
+				 <input type="text"	class="form-control" placeholder="AGE"  name="age">
+			</div>
+			<div class="col">
+				<label for="exampleInputEmail1">DESIGNATION</label> <input
+					type="text" class="form-control" placeholder="DESIGNATION"  name="designation">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label for="inputGender">Gender</label> <select id="inputGender"
+					class="form-control"  name="gender">
+					<option selected>--select one--</option>
+					<option value="male" name="gender">male</option>
+					<option value="female" name="gender" >female</option>
+					<option value="other" name="gender">other</option>
+				</select>
+			</div>
+			<div class="col">
+				<label for="exampleInputEmail1">Date of Birth</label> <input
+					type="date" class="form-control" placeholder="dd-mm-yyyy"  name="dob">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label for="exampleInputEmail1">SALARY</label> <input type="text"
+					class="form-control" placeholder="SALARY"  name="salary">
+			</div>
+			<div class="col">
+				<label for="exampleInputEmail1">DEPAETMENT ID</label> <input
+					type="text" class="form-control" placeholder="DEPAETMENT ID"  name="deptid">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<label for="exampleInputEmail1">PHONE NUMBER</label> <input
+					type="text" class="form-control" placeholder="PHONE NUMBER"  name="phnum">
+			</div>
+			<div class="col">
+				<label for="exampleInputEmail1">MANAGER ID</label> <input
+					type="text" class="form-control" placeholder="MANAGER ID"  name="mgrid">
+			</div>
+		</div>
+		<div class="row">
+
+			<div class="col-6">
+				<label for="exampleInputEmail1">JOINING DATE</label> <input
+					type="date" class="form-control" placeholder="JOINING DATE"  name="doj">
+			</div>
+		</div>
+		
+      <div class="col-6">
+        <label for="exampleInputEmail1">Password</label>
+        <input type="password" class="form-control" placeholder="Enter The Password" name="password">
+      </div>
+      <div class="col-6">
+        <label for="exampleInputEmail1">Confirm Password</label>
+        <input type="password" class="form-control" placeholder="Enter The Confirm Password" name="confirm">
+      </div>
+     
+          <div class="row" style="margin-left: 250px">
+      <div class="col-3">
+        <br>
+        <button type="submit" class="form-control" > Submit</button>
+
+      </div>
+      <div class="col-3">
+        <br>
+        <button type="reset" class="form-control">Reset</button>
+      </div>
+	</div>
+
+
+  </form>
+
+
+  </div>
+</div>
+
+<div class="collapse" id="collapseExample2">
+  <div class="card card-body">
+  <p class="h3" style="margin-left: 40%">EMPLOYEE OTHER INFORMATION</p>
+  <hr>
+  <form>
+    <div class="row">
+      <div class="col">
+        <label for="exampleInputEmail1">ID</label>
+        <input type="text" class="form-control" name="id" placeholder="Please Enter ID">
+      </div>
+      <div class="col">
+        <label for="exampleInputemergenum">Emergency Contact Number</label>
+        <input type="text" class="form-control" name="ecnum" placeholder="Please Enter Emergency Contact Number">
+      </div>
+      <div class="col">
+        <label for="exampleInputmotname">Mother Name</label>
+        <input type="text" class="form-control" name="mname" placeholder="Please Enter Mother Name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="exampleInputPan">Pan Number</label>
+        <input type="text" class="form-control" name="pan" placeholder="Please Enter Pan Number">
+      </div>
+      <div class="col">
+        <label for="exampleInputemergeName">Emergency Contact name</label>
+        <input type="text" class="form-control" name="ecname" placeholder="Please Enter Emergency Contact Name">
+      </div>
+      <div class="col">
+        <label for="exampleInputspouse">Spouse Name</label>
+        <input type="text" class="form-control" name="sname" placeholder="Please Enter Spouse Name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="inputStatus">Marital Status</label>
+        <select id="inputStatus" name="mstatus" class="form-control">
+          <option selected>Married</option>
+          <option value="married">Married</option>
+          <option value="unmarried">Unmarried</option>
+          <option value="divorcee">Divorcee</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="inputnationality">Nationality</label>
+        <select id="inputnationality" name="nationality" class="form-control">
+          <option selected>---Select One---</option>
+          <option value="indian">Indian</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="exampleInputpassport">Passport Number</label>
+        <input type="text" class="form-control" name="pnum" placeholder="Please Enter Passport Number">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="inputbloodgrp">Blood Group</label>
+        <select id="inputbloodgrp" name="bgroup" class="form-control">
+          <option selected>---Select One---</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="o+">o+</option>
+          <option value="o-">o-</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="inputreligion">Religion</label>
+        <select id="inputreligion" name="reg" class="form-control">
+          <option selected>---Select One---</option>
+          <option value="hindu">Hindu</option>
+          <option value="christian">Christian</option>
+          <option value="muslim">Muslim</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="exampleInputaadhar">Aadhar Number</label>
+        <input type="text" class="form-control" name="anum" placeholder="Please Enter Aadhar Number">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="inputphysicallych">Physically Challnged</label>
+        <select id="inputphysicallych" name="pchal" class="form-control">
+          <option selected>---Select One---</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="exampleInputfather">Father Number</label>
+        <input type="text" class="form-control"  name="fnum" placeholder="Please Enter Father Number">
+      </div>
+      <div class="col-3">
+        <br>
+        <button type="submit" class="form-control form-control btn btn-outline-secondary"> Submit</button>
+
+      </div>
+      <div class="col-3">
+        <br>
+        <button type="reset" class="form-control form-control btn btn-outline-success">reset</button>
+      </div>
+    </div>
+
+
+  </form>
+	
+</body>
+</html>
