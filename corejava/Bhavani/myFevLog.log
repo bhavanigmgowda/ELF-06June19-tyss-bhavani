@@ -1,0 +1,14 @@
+Jun 17, 2019 12:10:54 PM Log.Testlog main
+SEVERE: *************
+Jun 17, 2019 12:10:54 PM Log.Testlog main
+SEVERE: Hi its SEVERE a message
+Jun 17, 2019 12:10:54 PM Log.BuyFlip buy
+SEVERE: Hi its  Buy SEVERE a message
+Jun 17, 2019 12:36:21 PM Log.Cow sound
+SEVERE: sound() of cow is called
+Jun 17, 2019 12:36:21 PM Log.Cow div
+SEVERE: div()of cow is called
+Jun 17, 2019 12:36:21 PM Log.Lion sound
+SEVERE: sound() of lion is called
+Jun 17, 2019 12:36:21 PM Log.Lion div
+SEVERE: div() of lion is called

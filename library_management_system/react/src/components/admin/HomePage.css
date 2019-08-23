@@ -1,0 +1,56 @@
+.add-user {
+    color: black !important;
+    font-weight: 600;
+    font-size: 22px;
+    float: right;
+    top: 20%;
+    right: 10%;
+    position: fixed;
+    text-decoration: underline;
+}
+.user{
+    background-image:url("background.jpeg") ;
+    height:700px;
+
+}
+.header{
+    border: 1px solid;
+    background-color: black;
+    width: 304px;
+    margin-left: 198px;
+    margin-top: -107px;
+    color: cornsilk;
+
+}
+.user-details {
+    margin-top: 5%;
+    padding: 5%;
+    margin-left: 20%;
+}
+.table{
+    border: 2px solid rgba(0,0,0,0.5) ;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+th {
+    font-size: 25px;
+}
+td {
+    font-size: 23px;
+}
+.user-name {
+    padding: 5px;
+    width: 75%;
+     color: wheat !important;
+}
+.user-action {
+    
+    color: wheat !important;
+    text-decoration: none;
+   margin-left: 20px;
+}
+.user-update {
+  
+        color: wheat !important;
+        text-decoration: none;
+       
+    }

@@ -1,0 +1,16 @@
+Jun 17, 2019 12:42:51 PM Log.Register connect
+SEVERE: connect() is called
+Jun 17, 2019 12:42:51 PM Log.Register store
+SEVERE: div()  is called
+Jun 17, 2019 12:42:51 PM Log.Login validuser
+SEVERE: validuser() is called
+Jun 17, 2019 12:42:51 PM Log.Login navigate
+SEVERE: navigate()  is called
+Jun 17, 2019 12:44:29 PM Log.Register connect
+SEVERE: connect() is called
+Jun 17, 2019 12:44:29 PM Log.Register store
+SEVERE: div()  is called
+Jun 17, 2019 12:44:29 PM Log.Login validuser
+SEVERE: validuser() is called
+Jun 17, 2019 12:44:29 PM Log.Login navigate
+SEVERE: navigate()  is called
