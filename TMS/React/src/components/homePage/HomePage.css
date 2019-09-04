@@ -11,13 +11,23 @@ body{
       
       /* Create three equal columns that floats next to each other */
      .card-table{
-        width: 100%;
-        height: 880px;
+       
         background-color: rgb(187, 182, 174);
      }
-    .table{
-        width: 100%
-    }
+   
     .heading{
         background-color: darkgray;
+    }
+    .sticky {
+        margin-bottom: 15px;
+        padding: 4px 12px;
+        
+        width: 127px;
+        height: 129px;
+      } 
+      
+      .danger {
+        background-color: #ffdddd;
+        border-top: 25px solid #f44336;    
+        height: 129px;
     }
