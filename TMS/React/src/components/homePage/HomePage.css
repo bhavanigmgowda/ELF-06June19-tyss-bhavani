@@ -1,0 +1,23 @@
+body{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    }
+       
+    * {
+        box-sizing: border-box;
+      }
+      
+      /* Create three equal columns that floats next to each other */
+     .card-table{
+        width: 100%;
+        height: 880px;
+        background-color: rgb(187, 182, 174);
+     }
+    .table{
+        width: 100%
+    }
+    .heading{
+        background-color: darkgray;
+    }
