@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import './HomePage.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import NavBar from '../navBar/NavBar'
-import ReactStickies from 'react-stickies'; //ES6
-import { Draggable, Droppable } from 'react-drag-and-drop'
+import { Nav, NavDropdown } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
+import SearchNavabar from '../navBar/SearchNavabar';
 
 export class HomePage extends Component {
 
     constructor(props) {
         super(props)
+
         this.state = {
             todo: [],
             complete: [],
             blocked: [],
             onProgress: [],
             notes: [],
-            i: '',
-            tasks: [
-                { name: "1", category: "todo", bgcolor: "yellow" },
-                { name: "2", category: "onProgress", bgcolor: "pink" },
-                { name: "3", category: "complete", bgcolor: "skyblue" },
-                { name: "4", category: "blocked", bgcolor: "red" }
-            ]
+            i: [],
+            a: '',
+            isUpdate:false
+
         }
 
 
@@ -30,6 +27,12 @@ export class HomePage extends Component {
         this.getTask = this.getTask.bind(this);
 
     }
+    drop = (ev) => {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+        
+      }
 
     onDragOver = (ev) => {
         ev.preventDefault();
@@ -38,48 +41,101 @@ export class HomePage extends Component {
         ev.preventDefault();
     }
 
-    drag(ev) { 
+    drag(ev) {
         console.log("drag", ev.dataTransfer.setData("text", ev.target.id));
+     
     }
 
-    drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        console.log("dorp", ev.target.appendChild(document.getElementById(data)));
-       /*  if(this.state.todo[0].status==="todo"){
-                this.setState({
-                    todo: this.state.todo[0].status="onProgress"
-                })
-
-                console.log("change",this.state.todo)
-
-        } */
-        console.log("update",this.state.todo[0].status)
-    }
-
-
+   
 
     componentDidMount() {
         this.getTask();
 
     }
-updateTask(e){
-    e.preventDefault();
-   
-        Axios.put('http://localhost:8080/updateTaskStatus', this.state)
-        .then((response)=>{
-            console.log(response.data.message)
-           if(response.data.statusCode === 201) {
-            this.props.history.push('/homePage')
-               
-           } 
-            
-        }).catch((error)=>{
-            console.log(error)
-        })
-      
-     
-}
+    funToDo(e,tid) {
+        e.preventDefault();
+        if (this.state.todo[tid].status === "todo") {
+            console.log("update", this.state.todo[tid])
+
+            this.setState({
+                status: this.state.todo[tid].status = "onProgress",
+                isUpdate:true
+            })
+            this.updateTask(e,tid);
+            console.log("update", this.state.todo[tid]);
+
+        }
+
+    }
+    funOnProgress(e,tid) {
+        let i = 0;
+        let j = this.state.onProgress.taskId = tid;
+        console.log("tid", this.state.onProgress);
+        if (i === j) {
+            if (this.state.onProgress[tid].status === "onProgress") {
+                console.log("update", this.state.onProgress[i])
+
+                this.setState({
+                    status: this.state.onProgress[i].status = "blocked",
+                    isUpdate: true
+
+                })
+                this.updateTask(e,tid);
+
+                console.log("update", this.state.onProgress[i]);
+
+            }
+        }else{
+            i++;
+        }
+        
+
+    }
+    funBlocked(tid) {
+        let i = 0;
+        let j = this.state.blocked.taskId = tid;
+        console.log("tid", this.state.blocked);
+        if (i === j) {
+            if (this.state.blocked[tid].status === "blocked") {
+                console.log("update", this.state.blocked[i])
+
+                this.setState({
+                    status: this.state.blocked[i].status = "onProgress",
+                    isUpdate: true
+
+                })
+                this.updateTask(tid);
+                
+                console.log("update", this.state.blocked[i]);
+                console.log("isupdate", this.state.isUpdate);
+
+            }
+        } else {
+            i++;
+        }
+
+    }
+    updateTask=(e,tid) => {
+        e.preventDefault();
+        console.log("updateTaskid",tid);
+if(this.state.isUpdate){
+    console.log("updateTask1");
+
+        Axios.put('http://localhost:8080/updateTaskStatus', tid)
+            .then((response) => {
+                console.log(response.data.message)
+                if (response.data.statusCode === 201) {
+                    this.props.history.push('/homePage')
+                }
+            }).catch((error) => {
+                console.log(error)
+            })
+            this.setState({
+                isUpdate: false
+            }) 
+        }
+    }
+ 
 
     getTask() {
         Axios.get('http://localhost:8080/getAllTask')
@@ -87,8 +143,6 @@ updateTask(e){
                 console.log(response.data.message)
                 if (response.data.statusCode === 201) {
                     //setstat
-
-
                     this.setState({
                         todo: response.data.taskBean.filter(item => item.status === 'todo')
                     })
@@ -116,11 +170,21 @@ updateTask(e){
             })
 
     }
+    ID() {
+        return Math.random().toString(36).substr(2, 9);
+    }
     render() {
 
         return (
 
             <div>
+                <SearchNavabar />
+                <Nav className="nav-link">
+                    <NavDropdown title="ToMe" id="basic-nav-dropdown">
+                        <NavLink className="nav-link" to="/tome" >To Me</NavLink>
+                        <NavLink className="nav-link" to="/byme">By Me</NavLink>
+                    </NavDropdown>
+                </Nav>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-4">
@@ -135,19 +199,20 @@ updateTask(e){
                                             </p><div className="row">
                                                 <div className="col-md-12">
 
-                                                    {this.state.todo.map(item => {
-                                                        return (
-                                                            <div id="drag4" className="sticky" draggable="true"
-                                                                onDragStart={(e) => this.drag(e)} onClick={(e) => this.drop(e)}>
-                                                                     <p hidden>{item.taskId}</p>
-                                                                <p class="danger">{item.description} </p>
-                                                               
-                                                            </div>
-                                                        )
-                                                    })}
-                                              </div>
-                                            </div>
+                                                    <div >
 
+                                                        {this.state.todo.map(item => {
+                                                            return (
+
+                                                                <div id="drag3" className="sticky" draggable="true"
+                                                                onDragStart={(e) => this.drag(e)} onDragLeave={(e) => this.funToDo(e,item.taskId)} >
+                                                                <p class="danger">{item.description} </p>
+                                                            </div>
+                                                            )
+                                                        })}
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <p />
                                         </div>
                                     </div>
@@ -161,19 +226,20 @@ updateTask(e){
                                         <h5 className="card-header">
                                             <center> Progress </center>
                                         </h5>
-                                        <div onDrop={(e) => this.drop(e)} onDragOver={(e) => this.allowDrop(e)}>
+
+
                                             {this.state.onProgress.map(item => {
                                                 return (
-                                                    <div id="drag4" className="sticky" draggable="true"
-                                                        onDragStart={(e) => this.drag(e)}>
+
+                                                    <div id="drag3" className="sticky" draggable="true"
+                                                        onDragStart={(e) => this.drag(e)} onDragLeave={(e) => this.funOnProgress(e, item.taskId)} >
                                                         <p class="danger">{item.description} </p>
                                                     </div>
+
                                                 )
                                             })}
                                         </div>
-
                                     </div>
-                                </div>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -183,16 +249,18 @@ updateTask(e){
                                         <h5 className="card-header">
                                             <center> Blocked </center>
                                         </h5>
-                                        <div onDrop={(e) => this.drop(e)} onDragOver={(e) => this.allowDrop(e)}>
+
+                                        <div onDrop={(e) => this.drop(e)} onDragOver={(e) => this.allowDrop(e) }>
 
                                             {this.state.blocked.map(item => {
                                                 return (
-                                                    <div id="drag4" className="sticky" draggable="true"
-                                                        onDragStart={(e) => this.drag(e)}>
+                                                    <div id="drag8" className="sticky" draggable="true"
+                                                        onDragStart={(e) => this.drag(e)} onClick={(e) => this.funBlocked(e,item.taskId)} >
                                                         <p class="danger">{item.description} </p>
                                                     </div>
                                                 )
                                             })}
+                                        
                                         </div>
                                     </div>
                                 </div>
