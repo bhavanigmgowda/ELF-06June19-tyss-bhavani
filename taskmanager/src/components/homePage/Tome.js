@@ -21,7 +21,6 @@ export default class Tome extends Component {
               localStorage.setItem("taskBeans",JSON.stringify(response.data.taskBean));
               this.setState({
                 Tome: response.data.taskBean
-
             })
 
                

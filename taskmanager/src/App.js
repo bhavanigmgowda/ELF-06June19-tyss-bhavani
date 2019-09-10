@@ -6,6 +6,8 @@ import HomePage from './components/homePage/HomePage'
 import Stiky from './components/Sticky/Sticky'
 import createTask from './components/createTask/CreateTask'
 import createUser from './components/createUser/createUser'
+import myprofile from './components/createUser/MyProfile'
+
 import navBar from './components/navBar/NavBar'
 import tome from './components/homePage/Tome'
 import byme from './components/homePage/Byme'
@@ -31,7 +33,7 @@ function App() {
           <Route exact path='/completedTask' component={completedTask}></Route>
           <Route exact path='/searchPage' component={searchPage}></Route>
           <Route exact path='/navBar' component={navBar}></Route>
-      
+          <Route exact path='/myprofile' component={myprofile}></Route>
           <Route exact path='/byme' component={byme}></Route>   </Router>
          </div>
   );
