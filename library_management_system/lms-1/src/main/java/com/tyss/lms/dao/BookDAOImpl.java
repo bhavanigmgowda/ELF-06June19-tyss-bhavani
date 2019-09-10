@@ -21,7 +21,7 @@ public class BookDAOImpl implements BookDAO {
 	LibraryResponse response;
 	@Override
 	public LibraryResponse createBook(BookDetailsBean bean) {
-		if (!repository.existsById(bean.getISBNNo())) {
+		if (!repository.existsById(bean.getBookNo())) {
 			response.setStatusCode(201);
 			repository.save(bean);
 			response.setMessage("successfull");
@@ -38,7 +38,7 @@ public class BookDAOImpl implements BookDAO {
 	public LibraryResponse updateBook(BookDetailsBean bean) {
 
 		if (bean != null)
-			if (repository.existsById(bean.getISBNNo())) {
+			if (repository.existsById(bean.getBookNo())) {
 				response.setStatusCode(201);
 				repository.save(bean);
 				response.setMessage("successfull");
@@ -54,7 +54,7 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public LibraryResponse getBook(int id, HttpServletRequest request) {
 
-		if (request.getSession(false) != null) {
+		//if (request.getSession(false) != null) {
 
 			if (repository.existsById(id)) {
 				BookDetailsBean bean = repository.findById(id).get();
@@ -70,18 +70,18 @@ public class BookDAOImpl implements BookDAO {
 				response.setDecription("User data not  found");
 			}
 			return response;
-		} else {
+		/*} else {
 			response.setStatusCode(501);
 			response.setMessage("Failure");
 			response.setDecription("Please login first");
 			return response;
-		}
+		}*/
 
 	}
 
 	@Override
 	public LibraryResponse searchBook(String name, HttpServletRequest request) {
-		if (request.getSession(false) != null) {
+		//if (request.getSession(false) != null) {
 			List<BookDetailsBean> bean = repository.searchByName(name);
 
 			if (bean != null) {
@@ -95,18 +95,18 @@ public class BookDAOImpl implements BookDAO {
 				response.setDecription("User data not  selected successfully ");
 			}
 			return response;
-		} else {
+		/*} else {
 			response.setStatusCode(501);
 			response.setMessage("Failure");
 			response.setDecription("Please login first");
 			return response;
-		}
+		}*/
 	}
 
 	@Override
 	public LibraryResponse getAllBook(HttpServletRequest request) {
 
-		if (request.getSession(false) != null) {
+		//if (request.getSession(false) != null) {
 			List<BookDetailsBean> bean = (List<BookDetailsBean>) repository.findAll();
 			if (bean != null) {
 				response.setStatusCode(201);
@@ -120,19 +120,19 @@ public class BookDAOImpl implements BookDAO {
 				response.setDecription("User data not  found");
 			}
 			return response;
-		} else {
+		/*} else {
 			response.setStatusCode(501);
 			response.setMessage("Failure");
 			response.setDecription("Please login first");
 			return response;
 		}
-
+*/
 	}
 
 	@Override
 	public LibraryResponse deleteBook(int id, HttpServletRequest request) {
 
-		if (request.getSession(false) != null) {
+		//if (request.getSession(false) != null) {
 
 			BookDetailsBean bean = repository.findById(id).get();
 			if (bean != null) {
@@ -148,12 +148,12 @@ public class BookDAOImpl implements BookDAO {
 				response.setDecription("User data not Deleted found");
 			}
 			return response;
-		} else {
+		/*} else {
 			response.setStatusCode(501);
 			response.setMessage("Failure");
 			response.setDecription("Please login first");
 			return response;
-		}
+		}*/
 
 	}
 

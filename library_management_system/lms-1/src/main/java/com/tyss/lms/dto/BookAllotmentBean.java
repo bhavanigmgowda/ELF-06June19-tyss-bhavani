@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Entity
 @Table(name="book_allotment_bean")
-@Data
+
 public class BookAllotmentBean implements Serializable {
 
 	@Id
@@ -36,4 +36,46 @@ public class BookAllotmentBean implements Serializable {
 	
 	@Column(name="last_date")
 	private Date lastDate;
+
+	public int getBookallId() {
+		return bookallId;
+	}
+
+	public void setBookallId(int bookallId) {
+		this.bookallId = bookallId;
+	}
+
+	public BookDetailsBean getISBNNo() {
+		return ISBNNo;
+	}
+
+	public void setISBNNo(BookDetailsBean iSBNNo) {
+		ISBNNo = iSBNNo;
+	}
+
+	public UserRegisterBean getUserId() {
+		return userId;
+	}
+
+	public void setUserId(UserRegisterBean userId) {
+		this.userId = userId;
+	}
+
+	public Date getIssueDate() {
+		return issueDate;
+	}
+
+	public void setIssueDate(Date issueDate) {
+		this.issueDate = issueDate;
+	}
+
+	public Date getLastDate() {
+		return lastDate;
+	}
+
+	public void setLastDate(Date lastDate) {
+		this.lastDate = lastDate;
+	}
+	
+	
 }

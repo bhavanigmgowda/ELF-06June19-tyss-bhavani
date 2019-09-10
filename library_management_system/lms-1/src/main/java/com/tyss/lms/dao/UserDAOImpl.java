@@ -54,7 +54,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public LibraryResponse getUser(@RequestParam int id, HttpServletRequest request) {
-		if (request.getSession(false) != null) {
+		//if (request.getSession(false) != null) {
 
 			if (repository.existsById(id)) {
 				UserRegisterBean bean = repository.findById(id).get();
@@ -69,12 +69,12 @@ public class UserDAOImpl implements UserDAO {
 				response.setDecription("User data not  found");
 			}
 			return response;
-		} else {
+		/*} else {
 			response.setStatusCode(501);
 			response.setMessage("Failure");
 			response.setDecription("Please login first");
 			return response;
-		}
+		}*/
 
 	}
 

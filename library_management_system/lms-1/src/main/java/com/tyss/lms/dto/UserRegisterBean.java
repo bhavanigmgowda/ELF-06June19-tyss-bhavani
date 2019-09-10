@@ -19,7 +19,6 @@ import lombok.Data;
 @Table(name = "user_register")
 @JsonRootName(value = "user_register_bean")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userId")
-@Data
 public class UserRegisterBean implements Serializable {
 	
 	@Id
@@ -45,5 +44,77 @@ public class UserRegisterBean implements Serializable {
 
 	@Column(name = "user_type")
 	private String userType;
+
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+	public String getPassword() {
+		return Password;
+	}
+
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public Integer getPhoneNo() {
+		return phoneNo;
+	}
+
+
+	public void setPhoneNo(Integer phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+
+	public String getUserType() {
+		return userType;
+	}
+
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+	
+	
 
 }

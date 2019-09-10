@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 @Embeddable
-@Data
 public class BookUserPK implements Serializable {
 	
 	@JsonIgnore
@@ -19,5 +18,6 @@ public class BookUserPK implements Serializable {
 	@JoinColumn(name="id")
 	
 	private String educationType;
+	
 	
 }
