@@ -1,0 +1,21 @@
+
+
+.cardtask{
+    height: 420px;
+    width: 600px;
+    margin-left: 0px !important;
+    margin-top: 7%;
+    height: 20%;
+    margin-right: -32% !important;
+    margin-left: 37% !important;
+    background-color: rgba(148, 136, 136, 0.541) !important;
+   }
+    .container{
+    width: 400% !important;
+    margin-left: 20% !important;
+
+    }
+    
+    .cardheader{
+        margin-left: 42% !important;
+    }
